@@ -25,6 +25,7 @@ export class AuthService {
   async register(userData: ReqRegisterDTO): Promise<ResRegisterDTO> {
     try {
       const user = await this.usersService.create(userData);
+      console.log(user);
       delete user.password;
       return {
         user,

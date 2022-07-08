@@ -3,7 +3,7 @@ import { LocalGuard } from './guards/local-auth.guard';
 import { AuthService } from './auth.service';
 import { Body, Controller, Post, Req, UseGuards } from '@nestjs/common';
 import { User } from 'src/users/entities/user.entity';
-import { AuthedRequest } from 'src/_common/interfaces/authanticated-request.interface';
+import { AuthedRequest } from 'src/_common/interfaces/authenticated-request.interface';
 
 @Controller('auth')
 export class AuthController {

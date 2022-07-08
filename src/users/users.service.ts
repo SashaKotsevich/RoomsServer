@@ -14,10 +14,18 @@ export class UsersService {
   ) {}
 
   async create(userData: ReqRegisterDTO): Promise<User> {
-    return await this.usersRepository.save(plainToInstance(User, userData));
+    return this.usersRepository.save(plainToInstance(User, userData));
+  }
+
+  async findOne(id: number): Promise<User | null> {
+    return this.usersRepository.findOneBy({ id });
   }
 
   async findOneByEmail(email: string): Promise<User | null> {
     return this.usersRepository.findOneBy({ email });
+  }
+
+  async findAll(): Promise<User[] | null> {
+    return this.usersRepository.findBy({});
   }
 }
